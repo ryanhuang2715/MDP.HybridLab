@@ -1,0 +1,21 @@
+﻿@inject MessageService messageService
+@code {
+
+    // Properties
+    private int CurrentCount { get; set; } = 0;
+
+
+    // Methods
+    private void IncrementCount()
+    {
+        // Count
+        this.CurrentCount += 5;
+    }
+}
+
+
+<h3>@messageService.GetValue()</h3>
+
+<p role="status">Count: @CurrentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
